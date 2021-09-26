@@ -25,7 +25,7 @@ func main() { // automatically called when running project
 	// for i, card := range cards { // i = index of this element in the array // card = current card of iteration // range cards = take the slice of "cards" and loop over iot
 	// 	 fmt.Println(i, card)
 	// }
-	cards.print() // replace loop with deck.go function print()
+	cards.print() // replace loop with deck.go function print() because cards is of type deck (receiver)
 	//fmt.Println(cards) // print out variable to terminal
 }
 
