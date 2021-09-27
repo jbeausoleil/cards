@@ -16,10 +16,12 @@ func main() { // automatically called when running project
 	//card := "Ace of Spades" // determine / infer what datatype to be assigned
 	//card := newCard() // determine / infer what datatype to be assigned
 	// do not need to use colon after initialization of variable
-	//card = "Five of Diamonds"
-	//cards := []string{"Ace of Diamonds", newCard()} // slice of type string
-	cards := deck{"Ace of Diamonds", newCard()} // replace []string with deck due to declaration in deck.go
-	cards = append(cards, "Six of Spades") // adds string cards // does not modify cards, but creates a new cards slice
+	// card = "Five of Diamonds"
+	// cards := []string{"Ace of Diamonds", newCard()} // slice of type string
+	// cards := deck{"Ace of Diamonds", newCard()} // replace []string with deck due to declaration in deck.go
+	// cards = append(cards, "Six of Spades") // adds string cards // does not modify cards, but creates a new cards slice
+
+	cards := newDeck()
 
 	// iterate over slice
 	// for i, card := range cards { // i = index of this element in the array // card = current card of iteration // range cards = take the slice of "cards" and loop over iot
@@ -29,6 +31,6 @@ func main() { // automatically called when running project
 	//fmt.Println(cards) // print out variable to terminal
 }
 
-func newCard() string { // inform the GO compiler that we will return data type "string"
-	return "Five of Diamonds"
-}
+//func newCard() string { // inform the GO compiler that we will return data type "string"
+//	return "Five of Diamonds"
+//}
