@@ -1,4 +1,5 @@
 package main // executable type package
+import "log"
 
 ////// notes //////
 
@@ -29,9 +30,13 @@ func main() { // automatically called when running project
 	// }
 	//cards.print() // replace loop with deck.go function print() because cards is of type deck (receiver)
 	//fmt.Println(cards) // print out variable to terminal
-	hand, remainingCards := deal(cards, 5)
-	hand.print()
-	remainingCards.print()
+	//hand, remainingCards := deal(cards, 5)
+	//hand.print()
+	//remainingCards.print()
+	err := cards.saveToFile("my_file")
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 //func newCard() string { // inform the GO compiler that we will return data type "string"
