@@ -1,5 +1,4 @@
 package main // executable type package
-import "log"
 
 ////// notes //////
 
@@ -22,7 +21,7 @@ func main() { // automatically called when running project
 	// cards := deck{"Ace of Diamonds", newCard()} // replace []string with deck due to declaration in deck.go
 	// cards = append(cards, "Six of Spades") // adds string cards // does not modify cards, but creates a new cards slice
 
-	cards := newDeck()
+	//cards := newDeck()
 
 	// iterate over slice
 	// for i, card := range cards { // i = index of this element in the array // card = current card of iteration // range cards = take the slice of "cards" and loop over iot
@@ -33,10 +32,12 @@ func main() { // automatically called when running project
 	//hand, remainingCards := deal(cards, 5)
 	//hand.print()
 	//remainingCards.print()
-	err := cards.saveToFile("my_file")
-	if err != nil {
-		log.Fatal(err)
-	}
+	//err := cards.saveToFile("my_file")
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+	cards := newDeckFromFile("my_file")
+	cards.print()
 }
 
 //func newCard() string { // inform the GO compiler that we will return data type "string"
