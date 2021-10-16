@@ -24,8 +24,12 @@ func newDeck() deck {
 // ----- Receiver Functions ----- //
 // Create a new function that applies to deck and prints out all the cards
 func (d deck) print() { // d = actual copy of the deck being used // deck = Any variable of type 'deck' now gets access to the 'print' method
-	for _, card := range d {
-		fmt.Println(card)
+	for i, card := range d {
+		fmt.Println(i, card)
 	}
 	fmt.Println("There are", len(d), "cards in the deck.")
+}
+
+func deal(d deck, handSize int) (deck, deck) { // call deal function with two arguments -- d of type deck, and handSize of type int
+	return d[:handSize], d[handSize:] // return two values by separation of comma
 }
