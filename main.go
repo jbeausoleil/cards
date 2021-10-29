@@ -37,6 +37,7 @@ func main() { // automatically called when running project
 	//	log.Fatal(err)
 	//}
 	cards := newDeckFromFile("my_file")
+	cards.shuffle()
 	cards.print()
 }
 

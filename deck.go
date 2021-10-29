@@ -3,8 +3,10 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"math/rand"
 	"os"
 	"strings"
+	"time"
 )
 
 // Create a new type of 'deck' which is a slice of strings
@@ -58,4 +60,15 @@ func newDeckFromFile(fileName string) deck { // read from file and create an obj
 	}
 	s := strings.Split(string(bs), ",") // split Ace of Spades, etc. to ["Ace of Spades", "etc."]
 	return s // return slice of string as deck
+}
+
+func (d deck) shuffle() {
+	source := rand.NewSource(time.Now().UnixNano()) // seed value
+	r := rand.New(source) // generate random number
+
+	for i := range d {
+		newPosition := r.Intn(len(d) - 1)
+
+		d[i], d[newPosition] = d[newPosition], d[i]
+	}
 }
